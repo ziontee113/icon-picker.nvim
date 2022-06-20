@@ -20,21 +20,26 @@ end --}}}
 
 -- vim.ui.select Functions{{{
 local function insert_user_choice_normal(choice)
-	local split = vim.split(choice, " ")
+	if choice then
+		local split = vim.split(choice, " ")
 
-	--> without vim.schedule it won't exit to normal mode
-	vim.schedule(function()
-		vim.cmd("norm! a" .. split[1] .. "")
-	end)
+		--> without vim.schedule it won't exit to normal mode
+		vim.schedule(function()
+			vim.cmd("norm! a" .. split[1] .. "")
+		end)
+	end
 end
 
 local function insert_user_choice_insert(choice)
 	if choice then
 		local split = vim.split(choice, " ")
 
-		vim.cmd("norm! a" .. split[1])
-		local key = vim.api.nvim_replace_termcodes("<Right>", true, true, true)
-		vim.api.nvim_feedkeys(key, "i", false)
+		vim.cmd("norm! i" .. split[1])
+
+		vim.schedule(function()
+			local key = vim.api.nvim_replace_termcodes("<Right>", true, true, true)
+			vim.api.nvim_feedkeys(key, "i", false)
+		end)
 	end
 end
 
