@@ -1,0 +1,37 @@
+                                                              *icon-picker.nvim*
+icon-picker.nvim is a Neovim plugin that helps you pick
+Nerd Font Icons & Emojis ✨ 
+
+===============================================================================
+
+                                                                     *PickIcons*
+When you execute PickIcons, the vim.ui.select() window will show up,
+the results will include both Nerd Fonts results and Emoji results.
+                                        This command is written for Normal Mode.
+
+                                                                     *PickEmoji*
+When you execute PickEmoji, the vim.ui.select() window will show up,
+the results will include only Emoji results.
+                                        This command is written for Normal Mode.
+
+                                                                      *PickNerd*
+When you execute PickNerd, the vim.ui.select() window will show up,
+the results will include only Nerd Font Icons results.
+                                        This command is written for Normal Mode.
+
+===============================================================================
+
+                                                               *PickIconsInsert*
+When you execute PickIconsInsert, the vim.ui.select() window will show up,
+the results will include both Nerd Fonts results and Emoji results.
+                                        This command is written for Insert Mode.
+
+                                                               *PickEmojiInsert*
+When you execute PickEmojiInsert, the vim.ui.select() window will show up,
+the results will include only Emoji results.
+                                        This command is written for Insert Mode.
+
+                                                                *PickNerdInsert*
+When you execute PickNerdInsert, the vim.ui.select() window will show up,
+the results will include only Nerd Font Icons results.
+                                        This command is written for Insert Mode.
