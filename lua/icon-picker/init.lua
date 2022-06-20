@@ -5,20 +5,20 @@ local emoji_data = require("icon-picker.icons.emoji-list")
 
 local item_list = {}
 
+-- Push Item Functions{{{
 local function push_emojis()
-	-- get data for Emoji
 	for _, value in pairs(emoji_data) do
 		table.insert(item_list, value)
 	end
 end
 
 local function push_nerd_fonts()
-	-- get data for Nerd Fonts
 	for key, value in pairs(nerd_font_data) do
 		table.insert(item_list, value .. " " .. key)
 	end
-end
+end --}}}
 
+-- vim.ui.select Functions{{{
 local function insert_user_choice_normal(choice)
 	local split = vim.split(choice, " ")
 
@@ -27,6 +27,7 @@ local function insert_user_choice_normal(choice)
 		vim.cmd("norm! i" .. split[1] .. "")
 	end)
 end
+
 local function insert_user_choice_insert(choice)
 	if choice then
 		local split = vim.split(choice, " ")
@@ -41,9 +42,9 @@ local function custom_ui_select(items, prompt, callback)
 	vim.ui.select(items, {
 		prompt = prompt,
 	}, callback)
-end
+end --}}}
 
--- Commands for Normal Mode
+-- Commands for Normal Mode{{{
 vim.api.nvim_create_user_command("PickEmoji", function()
 	item_list = {}
 	push_emojis()
@@ -59,9 +60,9 @@ vim.api.nvim_create_user_command("PickIcons", function()
 	push_emojis()
 	push_nerd_fonts()
 	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_normal)
-end, {})
+end, {}) --}}}
 
--- Commands for Insert Mode
+-- Commands for Insert Mode{{{
 vim.api.nvim_create_user_command("PickEmojiInsert", function()
 	item_list = {}
 	push_emojis()
@@ -77,6 +78,8 @@ vim.api.nvim_create_user_command("PickIconsInsert", function()
 	push_emojis()
 	push_nerd_fonts()
 	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_insert)
-end, {})
+end, {}) --}}}
 
 return M
+
+-- vim: foldmethod=marker foldmarker={{{,}}} foldlevel=0
