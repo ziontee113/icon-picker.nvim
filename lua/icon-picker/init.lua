@@ -24,7 +24,7 @@ local function insert_user_choice_normal(choice)
 
 	--> without vim.schedule it won't exit to normal mode
 	vim.schedule(function()
-		vim.cmd("norm! i" .. split[1] .. "")
+		vim.cmd("norm! a" .. split[1] .. "")
 	end)
 end
 
