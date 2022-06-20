@@ -1,4 +1,4 @@
-## icon-picker.nvim
+# icon-picker.nvim
 
 This is a Neovim plugin that helps you pick Nerd Font Icons &amp; Emojis ✨
 
@@ -6,9 +6,9 @@ https://user-images.githubusercontent.com/102876811/174574267-d38861f2-cd11-416f
 
 https://user-images.githubusercontent.com/102876811/174574279-37d4dc95-3fa3-41e2-881c-4c89860bbe22.mp4
 
-## Installation
+# Installation
 
-#### This plugin utilizes `vim.ui.select()`, so you're gonna need something like [dressing.nvim](https://github.com/stevearc/dressing.nvim).
+#### This plugin utilizes `vim.ui.select()`, so you're gonna need something like [dressing.nvim](https://github.com/stevearc/dressing.nvim) and a fuzzy finder like [Telescope](nvim-telescope/telescope.nvim).
 
 For Packer
 
@@ -22,11 +22,13 @@ use({
 })
 ```
 
-## Usage
+# Usage
 
 #### Sample Config:
 
 ```lua
+local opts = { noremap = true, silent = true }
+
 vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
 ```
