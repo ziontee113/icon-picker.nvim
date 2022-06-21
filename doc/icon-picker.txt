@@ -1,6 +1,6 @@
                                                               *icon-picker.nvim*
 icon-picker.nvim is a Neovim plugin that helps you pick
-Nerd Font Icons & Emojis ✨ 
+𝑨𝕃𝚻 Font Characters, Symbols Σ, Nerd Font Icons  & Emojis ✨ 
 
 ===============================================================================
 
@@ -11,12 +11,22 @@ the results will include both Nerd Fonts results and Emoji results.
 
                                                                      *PickEmoji*
 When you execute PickEmoji, the vim.ui.select() window will show up,
-the results will include only Emoji results.
+the results will include only Emoji 😃 ☕ 💯 results.
                                         This command is written for Normal Mode.
 
                                                                       *PickNerd*
 When you execute PickNerd, the vim.ui.select() window will show up,
-the results will include only Nerd Font Icons results.
+the results will include only Nerd Font    Icons results.
+                                        This command is written for Normal Mode.
+
+                                                                   *PickAltFont*
+When you execute PickAltFont, the vim.ui.select() window will show up,
+the results will include only Alt Font Character 𝐀 𝚉 𝐹 results.
+                                        This command is written for Normal Mode.
+
+                                                                   *PickSymbols*
+When you execute PickSymbols, the vim.ui.select() window will show up,
+the results will include only Symbols £ © ¥ results.
                                         This command is written for Normal Mode.
 
 ===============================================================================
@@ -28,10 +38,20 @@ the results will include both Nerd Fonts results and Emoji results.
 
                                                                *PickEmojiInsert*
 When you execute PickEmojiInsert, the vim.ui.select() window will show up,
-the results will include only Emoji results.
+the results will include only Emoji 😃 ☕ 💯 results.
                                         This command is written for Insert Mode.
 
                                                                 *PickNerdInsert*
 When you execute PickNerdInsert, the vim.ui.select() window will show up,
-the results will include only Nerd Font Icons results.
+the results will include only Nerd Font    Icons results.
+                                        This command is written for Insert Mode.
+
+                                                             *PickAltFontInsert*
+When you execute PickAltFontInsert, the vim.ui.select() window will show up,
+the results will include only Alt Font Character 𝐀 𝚉 𝐹 results.
+                                        This command is written for Insert Mode.
+
+                                                             *PickSymbolsInsert*
+When you execute PickSymbols, the vim.ui.select() window will show up,
+the results will include only Symbols £ © ¥ results.
                                         This command is written for Insert Mode.
