@@ -60,6 +60,10 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
 You can use `:help ` to see the details for any of those commands.
 Example: `:help PickAltFont`
 
+## Todo:
+
+Fine tune the Insert Mode experience.
+
 ## Feedback
 
 If you run into issues or come up with an awesome idea, please feel free to open an issue or PR.
