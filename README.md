@@ -32,6 +32,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
 ```
+I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
 
 #### Available Commands:
 
@@ -47,6 +48,11 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
   - `PickNerdInsert`
   - `PickSymbolsInsert`
   - `PickAltFontInsert`
+
+## Todo
+
+- Deal with the crazy Emojis that are not working properly in Terminals (either find a solution or disable them completely)
+- Add ASCII Symbols as one of the sources.
 
 ## Feedback
 
