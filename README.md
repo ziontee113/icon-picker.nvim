@@ -33,8 +33,9 @@ use({
 ```lua
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
+vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
 ```
 
 I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
@@ -42,17 +43,19 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
 #### Available Commands:
 
 - Normal Mode:
-  - `PickIcons`
+  - `PickIcons` (Nerd Font Icons & Emojis)
   - `PickEmoji`
   - `PickNerd`
   - `PickSymbols`
   - `PickAltFont`
+  - `PickAltFontAndSymbols`
 - Insert Mode:
-  - `PickIconsInsert`
+  - `PickIconsInsert` (Nerd Font Icons & Emojis)
   - `PickEmojiInsert`
   - `PickNerdInsert`
   - `PickSymbolsInsert`
   - `PickAltFontInsert`
+  - `PickAltFontAndSymbolsInsert`
 
 You can use `:help ` to see the details for any of those commands.
 Example: `:help PickAltFont`

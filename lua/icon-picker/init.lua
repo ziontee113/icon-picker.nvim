@@ -89,6 +89,12 @@ vim.api.nvim_create_user_command("PickAltFont", function()
 	item_list = {}
 	push_alt_font()
 	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_normal)
+end, {})
+vim.api.nvim_create_user_command("PickAltFontAndSymbols", function()
+	item_list = {}
+	push_symbols()
+	push_alt_font()
+	custom_ui_select(item_list, "Pick Alt Font Character or Symbol", insert_user_choice_normal)
 end, {}) --}}}
 
 -- Commands for Insert Mode{{{
@@ -117,6 +123,12 @@ vim.api.nvim_create_user_command("PickAltFontInsert", function()
 	item_list = {}
 	push_alt_font()
 	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_insert)
+end, {})
+vim.api.nvim_create_user_command("PickAltFontAndSymbolsInsert", function()
+	item_list = {}
+	push_symbols()
+	push_alt_font()
+	custom_ui_select(item_list, "Pick Alt Font Character or Symbol", insert_user_choice_insert)
 end, {}) --}}}
 
 return M
