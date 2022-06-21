@@ -39,10 +39,14 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
   - `PickIcons`
   - `PickEmoji`
   - `PickNerd`
+  - `PickSymbols`
+  - `PickAltFont`
 - Insert Mode:
   - `PickIconsInsert`
   - `PickEmojiInsert`
   - `PickNerdInsert`
+  - `PickSymbolsInsert`
+  - `PickAltFontInsert`
 
 ## Feedback
 

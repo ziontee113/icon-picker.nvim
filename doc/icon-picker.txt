@@ -11,22 +11,22 @@ the results will include both Nerd Fonts results and Emoji results.
 
                                                                      *PickEmoji*
 When you execute PickEmoji, the vim.ui.select() window will show up,
-the results will include only Emoji 😃 ☕ 💯 results.
+the results will include only Emojis 😃 ☕ 💯.
                                         This command is written for Normal Mode.
 
                                                                       *PickNerd*
 When you execute PickNerd, the vim.ui.select() window will show up,
-the results will include only Nerd Font    Icons results.
+the results will include only Nerd Font    Icons.
                                         This command is written for Normal Mode.
 
                                                                    *PickAltFont*
 When you execute PickAltFont, the vim.ui.select() window will show up,
-the results will include only Alt Font Character 𝐀 𝚉 𝐹 results.
+the results will include only Alt Font Character 𝐀 𝚉 𝐹.
                                         This command is written for Normal Mode.
 
                                                                    *PickSymbols*
 When you execute PickSymbols, the vim.ui.select() window will show up,
-the results will include only Symbols £ © ¥ results.
+the results will include only Symbols £ © ¥.
                                         This command is written for Normal Mode.
 
 ===============================================================================
@@ -38,20 +38,20 @@ the results will include both Nerd Fonts results and Emoji results.
 
                                                                *PickEmojiInsert*
 When you execute PickEmojiInsert, the vim.ui.select() window will show up,
-the results will include only Emoji 😃 ☕ 💯 results.
+the results will include only Emojis 😃 ☕ 💯.
                                         This command is written for Insert Mode.
 
                                                                 *PickNerdInsert*
 When you execute PickNerdInsert, the vim.ui.select() window will show up,
-the results will include only Nerd Font    Icons results.
+the results will include only Nerd Font    Icons.
                                         This command is written for Insert Mode.
 
                                                              *PickAltFontInsert*
 When you execute PickAltFontInsert, the vim.ui.select() window will show up,
-the results will include only Alt Font Character 𝐀 𝚉 𝐹 results.
+the results will include only Alt Font Character 𝐀 𝚉 𝐹.
                                         This command is written for Insert Mode.
 
                                                              *PickSymbolsInsert*
 When you execute PickSymbols, the vim.ui.select() window will show up,
-the results will include only Symbols £ © ¥ results.
+the results will include only Symbols £ © ¥.
                                         This command is written for Insert Mode.
