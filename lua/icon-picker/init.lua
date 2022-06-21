@@ -2,6 +2,8 @@ local M = {}
 
 local nerd_font_data = require("icon-picker.icons.nf-icon-list")
 local emoji_data = require("icon-picker.icons.emoji-list")
+local alt_font_data = require("icon-picker.icons.alt-fonts")
+local symbols_data = require("icon-picker.icons.symbol-list")
 
 local item_list = {}
 
@@ -15,6 +17,18 @@ end
 local function push_nerd_fonts()
 	for key, value in pairs(nerd_font_data) do
 		table.insert(item_list, value .. " " .. key)
+	end
+end
+
+local function push_alt_font()
+	for _, item in ipairs(alt_font_data) do
+		table.insert(item_list, item[1] .. "  " .. item[2])
+	end
+end
+
+local function push_symbols()
+	for _, item in ipairs(symbols_data) do
+		table.insert(item_list, item[1] .. "  " .. item[2])
 	end
 end --}}}
 
@@ -65,6 +79,16 @@ vim.api.nvim_create_user_command("PickIcons", function()
 	push_emojis()
 	push_nerd_fonts()
 	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_normal)
+end, {})
+vim.api.nvim_create_user_command("PickSymbols", function()
+	item_list = {}
+	push_symbols()
+	custom_ui_select(item_list, "Pick a Symbol", insert_user_choice_normal)
+end, {})
+vim.api.nvim_create_user_command("PickAltFont", function()
+	item_list = {}
+	push_alt_font()
+	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_normal)
 end, {}) --}}}
 
 -- Commands for Insert Mode{{{
@@ -83,6 +107,16 @@ vim.api.nvim_create_user_command("PickIconsInsert", function()
 	push_emojis()
 	push_nerd_fonts()
 	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_insert)
+end, {})
+vim.api.nvim_create_user_command("PickSymbolsInsert", function()
+	item_list = {}
+	push_symbols()
+	custom_ui_select(item_list, "Pick a Symbol", insert_user_choice_insert)
+end, {})
+vim.api.nvim_create_user_command("PickAltFontInsert", function()
+	item_list = {}
+	push_alt_font()
+	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_insert)
 end, {}) --}}}
 
 return M
