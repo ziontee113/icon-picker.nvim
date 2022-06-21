@@ -1,6 +1,6 @@
 # icon-picker.nvim
 
-This is a Neovim plugin that helps you pick Nerd Font Icons &amp; Emojis ✨
+icon-picker.nvim is a Neovim plugin that helps you pick 𝑨𝕃𝚻 Font Characters, Symbols Σ, Nerd Font Icons  & Emojis ✨
 
 https://user-images.githubusercontent.com/102876811/174574267-d38861f2-cd11-416f-81b8-93ff115fe6b5.mp4
 
