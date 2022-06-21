@@ -53,11 +53,6 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
 You can use `:help ` to see the details for any of those commands.
 Example: `:help PickAltFont`
 
-## Todo
-
-- Deal with the crazy Emojis that are not working properly in Terminals (either find a solution or disable them completely)
-- Add ASCII Symbols as one of the sources.
-
 ## Feedback
 
 If you run into issues or come up with an awesome idea, please feel free to open an issue or PR.
