@@ -6,6 +6,10 @@ https://user-images.githubusercontent.com/102876811/174574267-d38861f2-cd11-416f
 
 https://user-images.githubusercontent.com/102876811/174574279-37d4dc95-3fa3-41e2-881c-4c89860bbe22.mp4
 
+![Pick Symbol Screenshot](https://user-images.githubusercontent.com/102876811/174749829-de1f8ab6-bd5a-4c5e-87db-78c3b5c96d49.png)
+
+![Alt Font Screenshot](https://user-images.githubusercontent.com/102876811/174749842-4802bd94-d517-4e53-942a-53351646f5cc.png)
+
 # Installation
 
 #### This plugin utilizes `vim.ui.select()`, so you're gonna need something like [dressing.nvim](https://github.com/stevearc/dressing.nvim) and a fuzzy finder like [Telescope](nvim-telescope/telescope.nvim).
