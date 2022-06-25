@@ -1,38 +1,50 @@
-local M = {}
+local type_data = {
+	["nerd_font"] = {
+		icons = require("icon-picker.icons.nf-icon-list"),
+		spaces = 2,
+	},
+	["emoji"] = {
+		icons = require("icon-picker.icons.emoji-list"),
+		spaces = 1,
+	},
+	["alt_font"] = {
+		icons = require("icon-picker.icons.alt-fonts"),
+		spaces = 1,
+	},
+	["symbols"] = {
+		icons = require("icon-picker.icons.symbol-list"),
+		spaces = 2,
+	},
+}
 
-local nerd_font_data = require("icon-picker.icons.nf-icon-list")
-local emoji_data = require("icon-picker.icons.emoji-list")
-local alt_font_data = require("icon-picker.icons.alt-fonts")
-local symbols_data = require("icon-picker.icons.symbol-list")
+local list_types = {
+	["Emoji"] = {
+		icon_types = { "emoji" },
+		desc = "Pick an emoji",
+	},
+	["Nerd"] = {
+		icon_types = { "nerd_font" },
+		desc = "Pick a Nerd Font",
+	},
+	["Icons"] = {
+		icon_types = { "emoji", "nerd_font" },
+		desc = "Pick an icon",
+	},
+	["Symbols"] = {
+		icon_types = { "symbols" },
+		desc = "Pick a Symbol",
+	},
+	["AltFont"] = {
+		icon_types = { "alt_font" },
+		desc = "Pick an Alt Font Character",
+	},
+	["AltFontAndSymbols"] = {
+		icon_types = { "symbols", "alt_font" },
+		desc = "Pick Alt Font Character or Symbol",
+	},
+}
 
-local item_list = {}
-
--- Push Item Functions{{{
-local function push_emojis()
-	for _, value in pairs(emoji_data) do
-		table.insert(item_list, value)
-	end
-end
-
-local function push_nerd_fonts()
-	for key, value in pairs(nerd_font_data) do
-		table.insert(item_list, value .. " " .. key)
-	end
-end
-
-local function push_alt_font()
-	for _, item in ipairs(alt_font_data) do
-		table.insert(item_list, item[1] .. "  " .. item[2])
-	end
-end
-
-local function push_symbols()
-	for _, item in ipairs(symbols_data) do
-		table.insert(item_list, item[1] .. "  " .. item[2])
-	end
-end --}}}
-
--- vim.ui.select Functions{{{
+-- vim.ui.select functionality {{{
 local function insert_user_choice_normal(choice)
 	if choice then
 		local split = vim.split(choice, " ")
@@ -61,76 +73,52 @@ local function custom_ui_select(items, prompt, callback)
 	vim.ui.select(items, {
 		prompt = prompt,
 	}, callback)
-end --}}}
+end
 
--- Commands for Normal Mode{{{
-vim.api.nvim_create_user_command("PickEmoji", function()
-	item_list = {}
-	push_emojis()
-	custom_ui_select(item_list, "Pick an emoji", insert_user_choice_normal)
-end, {})
-vim.api.nvim_create_user_command("PickNerd", function()
-	item_list = {}
-	push_nerd_fonts()
-	custom_ui_select(item_list, "Pick a Nerd Font", insert_user_choice_normal)
-end, {})
-vim.api.nvim_create_user_command("PickIcons", function()
-	item_list = {}
-	push_emojis()
-	push_nerd_fonts()
-	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_normal)
-end, {})
-vim.api.nvim_create_user_command("PickSymbols", function()
-	item_list = {}
-	push_symbols()
-	custom_ui_select(item_list, "Pick a Symbol", insert_user_choice_normal)
-end, {})
-vim.api.nvim_create_user_command("PickAltFont", function()
-	item_list = {}
-	push_alt_font()
-	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_normal)
-end, {})
-vim.api.nvim_create_user_command("PickAltFontAndSymbols", function()
-	item_list = {}
-	push_symbols()
-	push_alt_font()
-	custom_ui_select(item_list, "Pick Alt Font Character or Symbol", insert_user_choice_normal)
-end, {}) --}}}
+local callback_tbl = {
+	[""] = insert_user_choice_normal,
+	["Insert"] = insert_user_choice_insert,
+} --}}}
 
--- Commands for Insert Mode{{{
-vim.api.nvim_create_user_command("PickEmojiInsert", function()
-	item_list = {}
-	push_emojis()
-	custom_ui_select(item_list, "Pick an emoji", insert_user_choice_insert)
-end, {})
-vim.api.nvim_create_user_command("PickNerdInsert", function()
-	item_list = {}
-	push_nerd_fonts()
-	custom_ui_select(item_list, "Pick a Nerd Font", insert_user_choice_insert)
-end, {})
-vim.api.nvim_create_user_command("PickIconsInsert", function()
-	item_list = {}
-	push_emojis()
-	push_nerd_fonts()
-	custom_ui_select(item_list, "Pick an Icon", insert_user_choice_insert)
-end, {})
-vim.api.nvim_create_user_command("PickSymbolsInsert", function()
-	item_list = {}
-	push_symbols()
-	custom_ui_select(item_list, "Pick a Symbol", insert_user_choice_insert)
-end, {})
-vim.api.nvim_create_user_command("PickAltFontInsert", function()
-	item_list = {}
-	push_alt_font()
-	custom_ui_select(item_list, "Pick an Alt Font Character", insert_user_choice_insert)
-end, {})
-vim.api.nvim_create_user_command("PickAltFontAndSymbolsInsert", function()
-	item_list = {}
-	push_symbols()
-	push_alt_font()
-	custom_ui_select(item_list, "Pick Alt Font Character or Symbol", insert_user_choice_insert)
-end, {}) --}}}
+-- list functionality {{{
+--- insert a key val pair into a list with an arbitrary amount of spaces
+-- @param  map: hash map of pairs to insert into list
+-- @param  num_spaces: number of spaces to insert between key and val
+local function push_map(map, num_spaces, cur_list)
+	local spaces = string.rep(" ", num_spaces)
 
-return M
+	for key, val in pairs(map) do
+		table.insert(cur_list, table.concat({ val, spaces, key }))
+	end
+
+	return cur_list
+end
+
+--- create list of icons and descriptions for UI and call UI with list
+-- @param  keys: array table of icon list key names
+-- @param  desc: description of picker functionality, e.g. "Pick an emoji"
+-- @param  callback: user input callback function
+local function generate_list(keys, desc, callback)
+	local cur_tbl
+	local item_list = {}
+
+	for _, type_key in ipairs(keys) do
+		cur_tbl = type_data[type_key]
+		item_list = push_map(cur_tbl["icons"], cur_tbl["spaces"], item_list)
+	end
+
+	custom_ui_select(item_list, desc, callback)
+end -- }}}
+
+-- init all commands
+for type, data in pairs(list_types) do
+	for _, mode in ipairs({ "", "Insert" }) do
+		local cmd_name = table.concat({ "Pick", type, mode })
+
+		vim.api.nvim_create_user_command(cmd_name, function()
+			generate_list(data["icon_types"], data["desc"], callback_tbl[mode])
+		end, {})
+	end
+end
 
 -- vim: foldmethod=marker foldmarker={{{,}}} foldlevel=0
