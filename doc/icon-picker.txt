@@ -5,9 +5,15 @@ icon-picker.nvim is a Neovim plugin that helps you pick
 ===============================================================================
 
                                                                      *PickIcons*
-When you execute PickIcons, the vim.ui.select() window will show up,
+When you execute PickEverything, the vim.ui.select() window will show up,
 the results will include both Nerd Fonts results and Emoji results.
                                         This command is written for Normal Mode.
+
+                                                                *PickEverything*
+When you execute PickIcons, the vim.ui.select() window will show up,
+the results will include everything icon-picker.nvim has
+                                        This command is written for Normal Mode.
+
 
                                                                      *PickEmoji*
 When you execute PickEmoji, the vim.ui.select() window will show up,
@@ -30,6 +36,13 @@ the results will include only Symbols £ © ¥.
                                         This command is written for Normal Mode.
 
 ===============================================================================
+
+                                                         *PickEverythingInsert*
+When you execute PickEverythingInsert, the vim.ui.select() window will show up,
+the results will include everything icon-picker.nvim has
+                                        This command is written for Inesrt Mode.
+
+
 
                                                                *PickIconsInsert*
 When you execute PickIconsInsert, the vim.ui.select() window will show up,
