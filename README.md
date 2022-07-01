@@ -70,6 +70,10 @@ Fine tune the Insert Mode experience.
 
 If you run into issues or come up with an awesome idea, please feel free to open an issue or PR.
 
+## Special Thanks To
+
+### [@mcauley-penney](https://github.com/mcauley-penney) for the amazing [PR](https://github.com/ziontee113/icon-picker.nvim/pull/3) :thumbsup:
+
 ## License
 
 The project is licensed under MIT license. See [LICENSE](./LICENSE) file for details.
