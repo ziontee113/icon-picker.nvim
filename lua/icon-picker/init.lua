@@ -24,7 +24,7 @@ local list_types = {
 	},
 	["PickAltFontAndSymbols"] = {
 		icon_types = { "symbols", "alt_font" },
-		desc = "Pick Alt Font Character or Symbol",
+		desc = "Pick Alt Font Characters & Symbols",
 	},
 	["PickEmoji"] = {
 		icon_types = { "emoji" },
@@ -32,6 +32,10 @@ local list_types = {
 	},
 	["PickIcons"] = {
 		icon_types = { "emoji", "nerd_font" },
+		desc = "Pick an Emoji & Nerd Font Icons",
+	},
+	["PickEverything"] = {
+		icon_types = { "emoji", "nerd_font", "alt_font", "symbols" },
 		desc = "Pick an icon",
 	},
 	["PickNerd"] = {
