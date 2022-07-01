@@ -34,7 +34,7 @@ use({
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
-vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
+vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
 vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
 ```
 
@@ -43,6 +43,7 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
 #### Available Commands:
 
 - Normal Mode:
+  - `PickEverything` (Nerd Font Icons & Emojis & Alt Font & Symbols)
   - `PickIcons` (Nerd Font Icons & Emojis)
   - `PickEmoji`
   - `PickNerd`
@@ -50,6 +51,7 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
   - `PickAltFont`
   - `PickAltFontAndSymbols`
 - Insert Mode:
+  - `PickEverythingInsert` (Nerd Font Icons & Emojis & Alt Font & Symbols)
   - `PickIconsInsert` (Nerd Font Icons & Emojis)
   - `PickEmojiInsert`
   - `PickNerdInsert`
