@@ -1,7 +1,13 @@
+PickAltFont	icon-picker.txt	/*PickAltFont*
+PickAltFontInsert	icon-picker.txt	/*PickAltFontInsert*
 PickEmoji	icon-picker.txt	/*PickEmoji*
 PickEmojiInsert	icon-picker.txt	/*PickEmojiInsert*
+PickEverything	icon-picker.txt	/*PickEverything*
+PickEverythingInsert	icon-picker.txt	/*PickEverythingInsert*
 PickIcons	icon-picker.txt	/*PickIcons*
 PickIconsInsert	icon-picker.txt	/*PickIconsInsert*
 PickNerd	icon-picker.txt	/*PickNerd*
 PickNerdInsert	icon-picker.txt	/*PickNerdInsert*
+PickSymbols	icon-picker.txt	/*PickSymbols*
+PickSymbolsInsert	icon-picker.txt	/*PickSymbolsInsert*
 icon-picker.nvim	icon-picker.txt	/*icon-picker.nvim*

@@ -26,6 +26,17 @@ use({
 })
 ```
 
+For Vim Plug
+
+```
+Plug 'stevearc/dressing.nvim'
+Plug 'ziontee113/icon-picker.nvim'
+
+lua << EOF
+require("icon-picker")
+EOF
+```
+
 # Usage
 
 #### Sample Config:
