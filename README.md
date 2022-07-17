@@ -33,9 +33,8 @@ use({
 ```lua
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
-vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
-vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickEverything<cr>", opts)
+vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 ```
 
 I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
