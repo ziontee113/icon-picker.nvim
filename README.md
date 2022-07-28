@@ -45,6 +45,7 @@ EOF
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickEverything<cr>", opts)
+vim.keymap.set("n", "<Leader><Leader>y", "<cmd>PickEverythingYank<cr>", opts)
 vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 ```
 
@@ -60,6 +61,14 @@ I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` 
   - `PickSymbols`
   - `PickAltFont`
   - `PickAltFontAndSymbols`
+- Normal Mode (yank):
+  - `PickEverythingYank` (Nerd Font Icons & Emojis & Alt Font & Symbols)
+  - `PickIconsYank` (Nerd Font Icons & Emojis)
+  - `PickEmojiYank`
+  - `PickNerdYank`
+  - `PickSymbolsYank`
+  - `PickAltFontYank`
+  - `PickAltFontAndSymbolsYank`
 - Insert Mode:
   - `PickEverythingInsert` (Nerd Font Icons & Emojis & Alt Font & Symbols)
   - `PickIconsInsert` (Nerd Font Icons & Emojis)
