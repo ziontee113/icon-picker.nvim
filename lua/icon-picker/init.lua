@@ -60,6 +60,16 @@ local function insert_user_choice_normal(choice)
 	end
 end
 
+local function yank_user_choice_normal(choice)
+	if choice then
+		local split = vim.split(choice, " ")
+
+		vim.schedule(function()
+			vim.cmd("let @+='" .. split[1] .. "'")
+		end)
+	end
+end
+
 local function insert_user_choice_insert(choice)
 	if choice then
 		local split = vim.split(choice, " ")
@@ -115,6 +125,10 @@ end -- }}}
 for type, data in pairs(list_types) do
 	vim.api.nvim_create_user_command(type, function()
 		generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
+	end, {})
+
+	vim.api.nvim_create_user_command(type .. "Yank", function()
+		generate_list(data["icon_types"], data["desc"], yank_user_choice_normal)
 	end, {})
 
 	vim.api.nvim_create_user_command(type .. "Insert", function()
