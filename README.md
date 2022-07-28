@@ -92,7 +92,9 @@ If you run into issues or come up with an awesome idea, please feel free to open
 
 ## Special Thanks To
 
-### [@mcauley-penney](https://github.com/mcauley-penney) for the amazing [PR](https://github.com/ziontee113/icon-picker.nvim/pull/3) :thumbsup:
+### [@mcauley-penney](https://github.com/mcauley-penney) for the amazing [#3](https://github.com/ziontee113/icon-picker.nvim/pull/3) :fire:
+
+### [@logan-connolly](https://github.com/logan-connolly) for adding Yank commands [#7](https://github.com/ziontee113/icon-picker.nvim/pull/7) :thumbsup:
 
 ## License
 
