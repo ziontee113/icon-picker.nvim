@@ -166,21 +166,27 @@ for command, callback in pairs(new_API_table) do
 end
 --}}}
 
+-- init all commands (legacy)
+for type, data in pairs(list_types) do
+	vim.api.nvim_create_user_command(type, function()
+		generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
+	end, {})
+
+	vim.api.nvim_create_user_command(type .. "Yank", function()
+		generate_list(data["icon_types"], data["desc"], yank_user_choice_normal)
+	end, {})
+
+	vim.api.nvim_create_user_command(type .. "Insert", function()
+		generate_list(data["icon_types"], data["desc"], insert_user_choice_insert)
+	end, {})
+end
+
 M.setup = function(opts) --{{{
-	if not opts.disable_legacy_commands then
-		-- init all commands (legacy)
+	if opts.disable_legacy_commands then
 		for type, data in pairs(list_types) do
-			vim.api.nvim_create_user_command(type, function()
-				generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
-			end, {})
-
-			vim.api.nvim_create_user_command(type .. "Yank", function()
-				generate_list(data["icon_types"], data["desc"], yank_user_choice_normal)
-			end, {})
-
-			vim.api.nvim_create_user_command(type .. "Insert", function()
-				generate_list(data["icon_types"], data["desc"], insert_user_choice_insert)
-			end, {})
+			vim.api.nvim_del_user_command(type)
+			vim.api.nvim_del_user_command(type .. "Insert")
+			vim.api.nvim_del_user_command(type .. "Yank")
 		end
 	end
 end --}}}
