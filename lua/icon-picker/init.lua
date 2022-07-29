@@ -114,7 +114,47 @@ local function generate_list(keys, desc, callback)
 	custom_ui_select(item_list, desc, callback)
 end -- }}}
 
--- init all commands
+-- New API --{{{
+function Split(s, delimiter) -- from code grep
+	local result = {}
+	for match in (s .. delimiter):gmatch("(.-)" .. delimiter) do
+		if #match > 0 then
+			table.insert(result, match)
+		end
+	end
+	return result
+end
+
+local new_API_table = { -- need better variable name
+	["Normal"] = insert_user_choice_normal,
+	["Insert"] = insert_user_choice_insert,
+	["Yank"] = yank_user_choice_normal,
+}
+
+-- loops through the table & create user commands
+for command, callback in pairs(new_API_table) do
+	vim.api.nvim_create_user_command("IconPicker" .. command, function(opts)
+		local args = Split(opts.args, " ") -- split command arguments
+		local desc = "Pick"
+
+		local item_list = {}
+		for _, argument in ipairs(args) do
+			local cur_tbl = icon_type_data[argument]
+			if cur_tbl == nil then
+				return
+			end
+
+			-- push icon results into item_list
+			item_list = push_map(cur_tbl["icons"], cur_tbl["spaces"], item_list)
+			desc = desc .. " " .. argument
+		end
+
+		custom_ui_select(item_list, desc, callback)
+	end, { nargs = "?" })
+end
+--}}}
+
+-- init all commands (legacy){{{
 for type, data in pairs(list_types) do
 	vim.api.nvim_create_user_command(type, function()
 		generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
@@ -127,6 +167,6 @@ for type, data in pairs(list_types) do
 	vim.api.nvim_create_user_command(type .. "Insert", function()
 		generate_list(data["icon_types"], data["desc"], insert_user_choice_insert)
 	end, {})
-end
+end --}}}
 
 -- vim: foldmethod=marker foldmarker={{{,}}} foldlevel=0
