@@ -21,7 +21,9 @@ use "stevearc/dressing.nvim"
 use({
   "ziontee113/icon-picker.nvim",
   config = function()
-    require("icon-picker")
+    require("icon-picker").setup({
+      disable_legacy_commands = true
+    })
   end,
 })
 ```
@@ -33,13 +35,43 @@ Plug 'stevearc/dressing.nvim'
 Plug 'ziontee113/icon-picker.nvim'
 
 lua << EOF
-require("icon-picker")
+require("icon-picker").setup({ disable_legacy_commands = true })
 EOF
 ```
 
 # Usage
 
-#### Sample Config:
+### Sample Config (new):
+
+```lua
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal alt_font symbols nerd_font emoji<cr>", opts)
+vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank alt_font symbols nerd_font emoji<cr>", opts) --> Yank the selected icon into register
+vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert alt_font symbols nerd_font emoji<cr>", opts)
+```
+
+You can cherry pick the Icon source to your preference, for example:
+
+```
+:IconPickerInsert alt_font symbols
+:IconPickerInsert nerd_font emoji
+:IconPickerInsert nerd_font
+:IconPickerInsert emoji nerd_font alt_font symbols
+```
+
+Available arguments for the `IconPicker` commands:
+
+- emoji
+- nerd_font
+- alt_font
+- symbols
+
+I personally use `<C-i>` for `IconPickerInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
+
+#### Sample Config (legacy):
+
+<details>
 
 ```lua
 local opts = { noremap = true, silent = true }
@@ -49,7 +81,7 @@ vim.keymap.set("n", "<Leader><Leader>y", "<cmd>PickEverythingYank<cr>", opts) --
 vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 ```
 
-I personally use `<C-i>` for `PickIconsInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
+</details>
 
 #### Available Commands:
 

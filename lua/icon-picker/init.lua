@@ -1,6 +1,6 @@
 local M = {}
 
-local icon_type_data = {
+local icon_type_data = { --{{{
 	["alt_font"] = {
 		icons = require("icon-picker.icons.alt-fonts"),
 		spaces = 1,
@@ -17,9 +17,9 @@ local icon_type_data = {
 		icons = require("icon-picker.icons.symbol-list"),
 		spaces = 2,
 	},
-}
+} --}}}
 
-local list_types = {
+local list_types = { --{{{
 	["PickAltFont"] = {
 		icon_types = { "alt_font" },
 		desc = "Pick an Alt Font Character",
@@ -48,7 +48,7 @@ local list_types = {
 		icon_types = { "symbols" },
 		desc = "Pick a Symbol",
 	},
-}
+} --}}}
 
 -- vim.ui.select functionality {{{
 local function insert_user_choice_normal(choice)
@@ -156,7 +156,7 @@ for command, callback in pairs(new_API_table) do
 end
 --}}}
 
-M.setup = function(opts)
+M.setup = function(opts) --{{{
 	if not opts.disable_legacy_commands then
 		-- init all commands (legacy)
 		for type, data in pairs(list_types) do
@@ -173,7 +173,7 @@ M.setup = function(opts)
 			end, {})
 		end
 	end
-end
+end --}}}
 
 return M
 -- vim: foldmethod=marker foldmarker={{{,}}} foldlevel=0
