@@ -152,7 +152,17 @@ for command, callback in pairs(new_API_table) do
 		end
 
 		custom_ui_select(item_list, desc, callback)
-	end, { nargs = "?" })
+	end, {
+		nargs = "?",
+		complete = function()
+			return {
+				"alt_font",
+				"nerd_font",
+				"emoji",
+				"symbols",
+			}
+		end,
+	})
 end
 --}}}
 
