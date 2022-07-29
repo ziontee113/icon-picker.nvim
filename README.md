@@ -81,8 +81,6 @@ vim.keymap.set("n", "<Leader><Leader>y", "<cmd>PickEverythingYank<cr>", opts) --
 vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 ```
 
-</details>
-
 #### Available Commands:
 
 - Normal Mode:
@@ -113,6 +111,8 @@ vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 
 You can use `:help ` to see the details for any of those commands.
 Example: `:help PickAltFont`
+
+</details>
 
 ## Todo:
 
