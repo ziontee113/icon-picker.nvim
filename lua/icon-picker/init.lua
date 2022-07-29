@@ -53,10 +53,16 @@ local function insert_user_choice_normal(choice)
 	if choice then
 		local split = vim.split(choice, " ")
 
-		--> without vim.schedule it won't exit to normal mode
-		vim.schedule(function()
-			vim.cmd("norm! a" .. split[1] .. "")
-		end)
+		vim.api.nvim_put({ split[1] }, "", false, true)
+	end
+end
+
+local function insert_user_choice_insert(choice)
+	if choice then
+		local split = vim.split(choice, " ")
+
+		vim.api.nvim_put({ split[1] }, "", true, true)
+		vim.api.nvim_feedkeys("a", "t", false)
 	end
 end
 
@@ -66,19 +72,6 @@ local function yank_user_choice_normal(choice)
 
 		vim.schedule(function()
 			vim.cmd("let @+='" .. split[1] .. "'")
-		end)
-	end
-end
-
-local function insert_user_choice_insert(choice)
-	if choice then
-		local split = vim.split(choice, " ")
-
-		vim.cmd("norm! i" .. split[1])
-
-		vim.schedule(function()
-			local key = vim.api.nvim_replace_termcodes("<Right>", true, true, true)
-			vim.api.nvim_feedkeys(key, "i", false)
 		end)
 	end
 end
