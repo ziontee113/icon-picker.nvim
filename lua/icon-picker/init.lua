@@ -1,3 +1,5 @@
+local M = {}
+
 local icon_type_data = {
 	["alt_font"] = {
 		icons = require("icon-picker.icons.alt-fonts"),
@@ -154,19 +156,24 @@ for command, callback in pairs(new_API_table) do
 end
 --}}}
 
--- init all commands (legacy){{{
-for type, data in pairs(list_types) do
-	vim.api.nvim_create_user_command(type, function()
-		generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
-	end, {})
+M.setup = function(opts)
+	if not opts.disable_legacy_commands then
+		-- init all commands (legacy)
+		for type, data in pairs(list_types) do
+			vim.api.nvim_create_user_command(type, function()
+				generate_list(data["icon_types"], data["desc"], insert_user_choice_normal)
+			end, {})
 
-	vim.api.nvim_create_user_command(type .. "Yank", function()
-		generate_list(data["icon_types"], data["desc"], yank_user_choice_normal)
-	end, {})
+			vim.api.nvim_create_user_command(type .. "Yank", function()
+				generate_list(data["icon_types"], data["desc"], yank_user_choice_normal)
+			end, {})
 
-	vim.api.nvim_create_user_command(type .. "Insert", function()
-		generate_list(data["icon_types"], data["desc"], insert_user_choice_insert)
-	end, {})
-end --}}}
+			vim.api.nvim_create_user_command(type .. "Insert", function()
+				generate_list(data["icon_types"], data["desc"], insert_user_choice_insert)
+			end, {})
+		end
+	end
+end
 
+return M
 -- vim: foldmethod=marker foldmarker={{{,}}} foldlevel=0
