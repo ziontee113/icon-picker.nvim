@@ -51,7 +51,13 @@ vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank alt_font symbols n
 vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert alt_font symbols nerd_font emoji<cr>", opts)
 ```
 
-You can cherry pick the Icon source to your preference, for example:
+#### Available Commands:
+
+- `IconPickerNormal` - Pick Icon and insert it to the buffer (normal mode)
+- `IconPickerInsert` - Pick Icon and insert it to the buffer (insert mode)
+- `IconPickerYank` - Pick Icon and yank it to register (will not input to buffer)
+
+You can cherry pick the Icon source to your preference using arguments, for example:
 
 ```
 :IconPickerInsert alt_font symbols
@@ -77,7 +83,7 @@ I personally use `<C-i>` for `IconPickerInsert`. If you also want to map `<C-I>`
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickEverything<cr>", opts)
-vim.keymap.set("n", "<Leader><Leader>y", "<cmd>PickEverythingYank<cr>", opts) --> Yank the selected icon into register
+vim.keymap.set("n", "<Leader><Leader>y", "<cmd>PickEverythingYank<cr>", opts)
 vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
 ```
 
