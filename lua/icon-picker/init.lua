@@ -184,7 +184,11 @@ end
 M.setup = function(opts) --{{{
 	if opts.disable_legacy_commands then
 		for type, data in pairs(list_types) do
-			vim.api.nvim_del_user_command(type)
+			local status_ok, _ = pcall(vim.api.nvim_del_user_command, type)
+			if not status_ok then
+				return
+			end
+
 			vim.api.nvim_del_user_command(type .. "Insert")
 			vim.api.nvim_del_user_command(type .. "Yank")
 		end
