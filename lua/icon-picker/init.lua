@@ -139,6 +139,10 @@ for command, callback in pairs(new_API_table) do
 		local args = Split(opts.args, " ") -- split command arguments
 		local desc = "Pick"
 
+		if #args == 0 then
+			args = { "emoji", "nerd_font", "alt_font", "symbols" }
+		end
+
 		local item_list = {}
 		for _, argument in ipairs(args) do
 			local cur_tbl = icon_type_data[argument]
