@@ -68,9 +68,10 @@ You can cherry pick the Icon source to your preference using arguments, for exam
 
 Available arguments for the `IconPicker` commands:
 
-- emoji
-- nerd_font
 - alt_font
+- emoji
+- html_colors
+- nerd_font
 - symbols
 
 I personally use `<C-i>` for `IconPickerInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
