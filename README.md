@@ -68,9 +68,10 @@ You can cherry pick the Icon source to your preference using arguments, for exam
 
 Available arguments for the `IconPicker` commands:
 
-- emoji
-- nerd_font
 - alt_font
+- emoji
+- html_colors
+- nerd_font
 - symbols
 
 I personally use `<C-i>` for `IconPickerInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
@@ -133,6 +134,8 @@ If you run into issues or come up with an awesome idea, please feel free to open
 ### [@mcauley-penney](https://github.com/mcauley-penney) for the amazing [#3](https://github.com/ziontee113/icon-picker.nvim/pull/3) :fire:
 
 ### [@logan-connolly](https://github.com/logan-connolly) for adding Yank commands [#7](https://github.com/ziontee113/icon-picker.nvim/pull/7) :thumbsup:
+
+### [@KaminoU](https://github.com/KaminoU) for adding HTML Color Picker [#14](https://github.com/ziontee113/icon-picker.nvim/pull/14) :thumbsup:
 
 ## License
 
