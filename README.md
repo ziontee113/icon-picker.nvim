@@ -72,6 +72,7 @@ Available arguments for the `IconPicker` commands:
 - emoji
 - html_colors
 - nerd_font
+- nerd_font_v3 (if you're using Nerd Fonts version 3 and above)
 - symbols
 
 I personally use `<C-i>` for `IconPickerInsert`. If you also want to map `<C-I>` and can't do it, you can check out my quick guide to solve that on YouTube: [Enable Special Keyboard Combinations in Alacritty / Kitty for Neovim](https://www.youtube.com/watch?v=lHBD6pdJ-Ng)
@@ -95,6 +96,7 @@ vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
   - `PickIcons` (Nerd Font Icons & Emojis)
   - `PickEmoji`
   - `PickNerd`
+  - `PickNerdV3`
   - `PickSymbols`
   - `PickAltFont`
   - `PickAltFontAndSymbols`
@@ -104,6 +106,7 @@ vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
   - `PickIconsYank` (Nerd Font Icons & Emojis)
   - `PickEmojiYank`
   - `PickNerdYank`
+  - `PickNerdV3Yank`
   - `PickSymbolsYank`
   - `PickAltFontYank`
   - `PickAltFontAndSymbolsYank`
@@ -112,6 +115,7 @@ vim.keymap.set("i", "<C-i>", "<cmd>PickEverythingInsert<cr>", opts)
   - `PickIconsInsert` (Nerd Font Icons & Emojis)
   - `PickEmojiInsert`
   - `PickNerdInsert`
+  - `PickNerdV3Insert`
   - `PickSymbolsInsert`
   - `PickAltFontInsert`
   - `PickAltFontAndSymbolsInsert`
