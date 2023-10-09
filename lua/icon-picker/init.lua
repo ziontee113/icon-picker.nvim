@@ -107,6 +107,7 @@ end
 local function custom_ui_select(items, prompt, callback)
 	vim.ui.select(items, {
 		prompt = prompt,
+		kind = "icon_picker",
 	}, callback)
 end
 
