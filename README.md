@@ -158,6 +158,8 @@ If you run into issues or come up with an awesome idea, please feel free to open
 
 ### [@KaminoU](https://github.com/KaminoU) for adding HTML Color Picker [#14](https://github.com/ziontee113/icon-picker.nvim/pull/14) :thumbsup:
 
+### [@Snxwman](https://github.com/Snxwman) for adding Nerd Fonts V3 icon list generator [#21](https://github.com/ziontee113/icon-picker.nvim/pull/21) :heart:
+
 ## License
 
 The project is licensed under MIT license. See [LICENSE](./LICENSE) file for details.
