@@ -1,3 +1,4 @@
 test/
 Session.vim
 .luarc.json
+scripts/emoji-test*
